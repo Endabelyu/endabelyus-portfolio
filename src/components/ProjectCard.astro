@@ -8,7 +8,10 @@ const { project: p } = Astro.props;
     <span class="text-xs uppercase tracking-wide text-ink-3">{p.domain}</span>
     <span class="rounded-xs bg-accent-soft px-2 py-1 text-xs text-accent-pressed">{p.status}</span>
   </div>
-  <h3 class="mt-3 text-2xl">{p.name}</h3>
+  <h3 class="mt-3 flex items-center gap-2 text-2xl">
+    <span class="inline-block h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true"></span>
+    {p.name}
+  </h3>
   <p class="mt-2 text-ink-2">{p.outcome}</p>
   <ul class="mt-4 flex flex-wrap gap-2">
     {p.tech.map((t) => <li class="rounded-xs border border-border px-2 py-0.5 text-xs text-ink-2">{t}</li>)}
