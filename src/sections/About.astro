@@ -3,13 +3,13 @@ import SectionHeading from '../components/SectionHeading.astro';
 ---
 <section id="about" class="mx-auto max-w-content px-6 py-24">
   <SectionHeading number="01" title="About" />
-  <div class="grid gap-10 sm:grid-cols-[280px_1fr] sm:items-start">
-    <div class="aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-md border border-border bg-surface">
-      <img src="/naswa.jpg" alt="Naswa Wilantama, fullstack developer" width="280" height="350" loading="lazy" class="h-full w-full -scale-x-100 object-cover" />
-    </div>
+  <div class="grid gap-10 sm:grid-cols-[1fr_280px] sm:items-start">
     <div class="space-y-5 text-lg text-ink-2">
       <p>Hi, I'm Naswa — some people call me Endabelyu. I'm a fullstack developer who builds web products end to end: clean interfaces, solid backends, and making sure everything runs reliably in production. To me, good software isn't just code that works — it's code that's easy to maintain and a product that genuinely helps people.</p>
       <p>I started on the frontend, then grew into backend, databases, and infrastructure — so I can take a product from idea to shipped. Lately I've been exploring AI engineering (LLMs, RAG, automation) to see how these tools can make products more useful.</p>
+    </div>
+    <div class="order-first aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-md border border-border bg-surface sm:order-none">
+      <img src="/naswa.jpg" alt="Naswa Wilantama, fullstack developer" width="280" height="350" loading="lazy" class="h-full w-full object-cover" />
     </div>
   </div>
 </section>
