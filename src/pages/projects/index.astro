@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects, projectTypes } from '../../data/projects';
+---
+<Base title="Projects — Naswa Wilantama" description="All projects by Naswa Wilantama — management systems, storefronts, apps, and automation.">
+  <Nav />
+  <main class="mx-auto max-w-content px-6 py-16">
+    <a href="/#projects" class="inline-flex items-center gap-1 text-sm text-ink-2 hover:text-accent">← Back home</a>
+
+    <header class="mt-8">
+      <span class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-3">All projects</span>
+      <h1 class="mt-2 text-4xl tracking-tight sm:text-5xl">Everything I've built</h1>
+      <p class="mt-4 max-w-xl text-lg text-ink-2">From business systems to storefronts, apps, and automation — filter by what you're looking for.</p>
+    </header>
+
+    <div class="mt-10 mb-8 flex flex-wrap gap-2" data-filter-bar>
+      <button class="rounded-full border border-border-strong px-4 py-1.5 text-sm" data-filter="all" aria-pressed="true">All</button>
+      {projectTypes.map((t) => (
+        <button class="rounded-full border border-border px-4 py-1.5 text-sm text-ink-2" data-filter={t} aria-pressed="false">{t}</button>
+      ))}
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-project-grid>
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </main>
+</Base>
+<script>
+  const bar = document.querySelector('[data-filter-bar]');
+  const cards = Array.from(document.querySelectorAll('[data-project-grid] [data-type]')) as HTMLElement[];
+  bar?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('button[data-filter]') as HTMLButtonElement | null;
+    if (!btn) return;
+    const f = btn.dataset.filter;
+    bar.querySelectorAll('button').forEach((b) => {
+      const on = b === btn;
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.toggle('border-border-strong', on);
+      b.classList.toggle('border-border', !on);
+      b.classList.toggle('text-ink-2', !on);
+    });
+    cards.forEach((c) => {
+      c.style.display = f === 'all' || c.dataset.type === f ? '' : 'none';
+    });
+  });
+</script>

@@ -3,7 +3,7 @@ import type { Project } from '../data/projects';
 interface Props { project: Project; }
 const { project: p } = Astro.props;
 ---
-<a href={`/projects/${p.slug}`} class="group block rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1 hover:border-border-strong">
+<a href={`/projects/${p.slug}`} data-type={p.type} class="group block rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1 hover:border-border-strong">
   <div class="flex items-center justify-between">
     <span class="text-xs uppercase tracking-wide text-ink-3">{p.domain}</span>
     <span class="rounded-xs bg-accent-soft px-2 py-1 text-xs text-accent-pressed">{p.status}</span>
