@@ -1,0 +1,20 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+const items = [
+  { year: '2025', role: 'Freelance Fullstack Developer', detail: 'Built business systems (optical POS, laundry, member management) for small businesses — frontend to deployment.' },
+];
+---
+<section id="experience" class="mx-auto max-w-content px-6 py-24">
+  <SectionHeading number="04" title="Experience" />
+  <ol class="space-y-8">
+    {items.map((it) => (
+      <li class="grid gap-2 sm:grid-cols-[100px_1fr]">
+        <span class="font-display text-ink-3">{it.year}</span>
+        <div>
+          <h3 class="text-xl">{it.role}</h3>
+          <p class="mt-1 text-ink-2">{it.detail}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

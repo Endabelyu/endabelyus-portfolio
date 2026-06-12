@@ -1,0 +1,43 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import { projects, featuredProjects, projectTypes } from '../data/projects';
+---
+<section id="projects" class="mx-auto max-w-content px-6 py-24">
+  <SectionHeading number="03" title="Projects" />
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {featuredProjects.map((p) => <ProjectCard project={p} />)}
+  </div>
+
+  <h3 class="mt-16 mb-6 text-xl">All projects</h3>
+  <div class="mb-6 flex flex-wrap gap-2" data-filter-bar>
+    <button class="rounded-full border border-border-strong px-4 py-1.5 text-sm" data-filter="all" aria-pressed="true">All</button>
+    {projectTypes.map((t) => (
+      <button class="rounded-full border border-border px-4 py-1.5 text-sm text-ink-2" data-filter={t} aria-pressed="false">{t}</button>
+    ))}
+  </div>
+  <div class="grid gap-3" data-project-list>
+    {projects.map((p) => <ProjectRow project={p} />)}
+  </div>
+</section>
+<script>
+  const bar = document.querySelector('[data-filter-bar]');
+  const rows = Array.from(document.querySelectorAll('[data-project-list] [data-type]')) as HTMLElement[];
+  bar?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('button[data-filter]') as HTMLButtonElement | null;
+    if (!btn) return;
+    const f = btn.dataset.filter;
+    bar.querySelectorAll('button').forEach((b) => {
+      const on = b === btn;
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.toggle('border-border-strong', on);
+      b.classList.toggle('border-border', !on);
+      b.classList.toggle('text-ink-2', !on);
+    });
+    rows.forEach((r) => {
+      r.style.display = f === 'all' || r.dataset.type === f ? '' : 'none';
+    });
+  });
+</script>

@@ -1,0 +1,16 @@
+---
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+<nav class="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur">
+  <div class="mx-auto flex max-w-content items-center justify-between px-6 py-4">
+    <a href="#top" class="font-display text-lg">Naswa<span class="text-accent">.</span></a>
+    <ul class="hidden gap-6 text-sm text-ink-2 sm:flex">
+      {links.map((l) => <li><a href={l.href} class="hover:text-accent">{l.label}</a></li>)}
+    </ul>
+  </div>
+</nav>

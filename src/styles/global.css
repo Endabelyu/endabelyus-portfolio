@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base — putih dominan */
+  --color-bg: #ffffff;
+  --color-surface: #f7f8fa;
+  --color-surface-sunken: #f0f2f5;
+
+  /* Text */
+  --color-ink: #14161a;
+  --color-ink-2: #5b6470;
+  --color-ink-3: #9aa3af;
+
+  /* Border */
+  --color-border: #e4e7ec;
+  --color-border-strong: #cdd2da;
+
+  /* Aksen merah Baymax — hard cap ~5% */
+  --color-accent: #e1241b;
+  --color-accent-hover: #c51a12;
+  --color-accent-pressed: #a6140d;
+  --color-accent-soft: #fdebea;
+
+  /* Functional */
+  --color-success: #16a34a;
+
+  /* Fonts */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Radius — anti-childish (card 12, button 8) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Content width */
+  --container-content: 1200px;
+}
+
+/* Self-hosted fonts (woff2 in /public/fonts). Falls back to system if absent. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-optical-sizing: auto;
+}
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

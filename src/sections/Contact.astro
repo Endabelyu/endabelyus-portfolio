@@ -1,0 +1,26 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+const channels = [
+  { label: 'Email', href: 'mailto:endabelyuproject@gmail.com', text: 'endabelyuproject@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/Endabelyu', text: 'github.com/Endabelyu' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/naswa-wilantama', text: 'linkedin.com/in/naswa-wilantama' },
+];
+---
+<section id="contact" class="mx-auto max-w-content px-6 py-24">
+  <SectionHeading number="05" title="Contact" />
+  <h3 class="font-display text-3xl">Let's connect</h3>
+  <p class="mt-3 max-w-md text-lg text-ink-2">Got a project in mind or just want to chat? I'd love to hear from you.</p>
+  <ul class="mt-8 grid gap-3 sm:max-w-md">
+    {channels.map((c) => (
+      <li>
+        <a href={c.href} class="flex items-center justify-between rounded-md border border-border px-4 py-3 hover:border-accent hover:text-accent">
+          <span class="text-sm text-ink-3">{c.label}</span>
+          <span class="text-sm font-medium">{c.text}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <footer class="mt-24 border-t border-border pt-8 text-sm text-ink-3">
+    <p>Built with care by Naswa Wilantama © 2026.</p>
+  </footer>
+</section>

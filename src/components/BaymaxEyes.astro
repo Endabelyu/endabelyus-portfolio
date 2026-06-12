@@ -1,0 +1,41 @@
+---
+interface Props { class?: string; }
+const { class: cls = '' } = Astro.props;
+---
+<svg class={cls} viewBox="0 0 240 120" role="img" aria-label="Baymax-style face" data-baymax-eyes>
+  <rect x="2" y="2" width="236" height="116" rx="58" fill="#F7F8FA" stroke="#E4E7EC" stroke-width="2"></rect>
+  <g data-eye-left><circle cx="80" cy="60" r="16" fill="#14161A"></circle></g>
+  <g data-eye-right><circle cx="160" cy="60" r="16" fill="#14161A"></circle></g>
+  <rect x="80" y="57" width="80" height="6" rx="3" fill="#14161A"></rect>
+  <circle cx="200" cy="92" r="7" fill="#E1241B"></circle>
+</svg>
+<script>
+  const svg = document.querySelector('[data-baymax-eyes]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  if (svg && !reduce && fine) {
+    const lEye = svg.querySelector('[data-eye-left] circle') as SVGCircleElement;
+    const rEye = svg.querySelector('[data-eye-right] circle') as SVGCircleElement;
+    const lBase = { x: 80, y: 60 };
+    const rBase = { x: 160, y: 60 };
+    const MAX = 4;
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    window.addEventListener('mousemove', (e) => {
+      const r = svg.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+      const dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+      tx = Math.max(-1, Math.min(1, dx)) * MAX;
+      ty = Math.max(-1, Math.min(1, dy)) * MAX;
+    });
+    const tick = () => {
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      lEye.setAttribute('cx', String(lBase.x + cx));
+      lEye.setAttribute('cy', String(lBase.y + cy));
+      rEye.setAttribute('cx', String(rBase.x + cx));
+      rEye.setAttribute('cy', String(rBase.y + cy));
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>
