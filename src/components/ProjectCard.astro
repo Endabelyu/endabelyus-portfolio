@@ -3,7 +3,7 @@ import type { Project } from '../data/projects';
 interface Props { project: Project; }
 const { project: p } = Astro.props;
 ---
-<article class="group rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1">
+<a href={`/projects/${p.slug}`} class="group block rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1 hover:border-border-strong">
   <div class="flex items-center justify-between">
     <span class="text-xs uppercase tracking-wide text-ink-3">{p.domain}</span>
     <span class="rounded-xs bg-accent-soft px-2 py-1 text-xs text-accent-pressed">{p.status}</span>
@@ -16,5 +16,5 @@ const { project: p } = Astro.props;
   <ul class="mt-4 flex flex-wrap gap-2">
     {p.tech.map((t) => <li class="rounded-xs border border-border px-2 py-0.5 text-xs text-ink-2">{t}</li>)}
   </ul>
-  {p.url && <a href={p.url} class="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-hover">View live →</a>}
-</article>
+  <span class="mt-4 inline-block text-sm font-medium text-accent group-hover:text-accent-hover">View details →</span>
+</a>
