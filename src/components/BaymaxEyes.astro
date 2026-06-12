@@ -19,14 +19,7 @@ const { class: cls = '' } = Astro.props;
     const lBase = { x: 80, y: 60 };
     const rBase = { x: 160, y: 60 };
     const MAX = 4;
-    let tx = 0, ty = 0, cx = 0, cy = 0;
-    window.addEventListener('mousemove', (e) => {
-      const r = svg.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-      const dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-      tx = Math.max(-1, Math.min(1, dx)) * MAX;
-      ty = Math.max(-1, Math.min(1, dy)) * MAX;
-    });
+    let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
     const tick = () => {
       cx += (tx - cx) * 0.12;
       cy += (ty - cy) * 0.12;
@@ -34,8 +27,23 @@ const { class: cls = '' } = Astro.props;
       lEye.setAttribute('cy', String(lBase.y + cy));
       rEye.setAttribute('cx', String(rBase.x + cx));
       rEye.setAttribute('cy', String(rBase.y + cy));
+      // Stop the loop once the eyes have settled — avoids a forever-running rAF.
+      if (Math.abs(tx - cx) < 0.05 && Math.abs(ty - cy) < 0.05) {
+        running = false;
+        return;
+      }
       requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    window.addEventListener('mousemove', (e) => {
+      const r = svg.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+      const dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+      tx = Math.max(-1, Math.min(1, dx)) * MAX;
+      ty = Math.max(-1, Math.min(1, dy)) * MAX;
+      if (!running) {
+        running = true;
+        requestAnimationFrame(tick);
+      }
+    });
   }
 </script>
