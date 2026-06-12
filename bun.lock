@@ -6,16 +6,14 @@
       "name": "portfolio-baymax",
       "dependencies": {
         "@astrojs/sitemap": "^3.7.3",
-        "@tailwindcss/vite": "4.3.0",
-        "astro": "6.4.6",
-        "tailwindcss": "4.3.0",
+        "@tailwindcss/vite": "^4.3.0",
+        "astro": "^6.4.6",
+        "tailwindcss": "^4.3.0",
       },
     },
   },
   "overrides": {
-    "@tailwindcss/vite": "4.3.0",
-    "tailwindcss": "4.3.0",
-    "vite": "7.3.5",
+    "vite": "^7.3.5",
   },
   "packages": {
     "@astrojs/compiler": ["@astrojs/compiler@4.0.0", "", {}, "sha512-eouss7G8ygdZqHuke033VMcVw5HTZUu+PXd/h06DGDUg/jt5btPYPqh66ENWw/mU78rBrf/oeC4oqoBwMtDMNA=="],

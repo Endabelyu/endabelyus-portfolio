@@ -13,13 +13,12 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "@tailwindcss/vite": "4.3.0",
-    "astro": "6.4.6",
-    "tailwindcss": "4.3.0"
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.6",
+    "tailwindcss": "^4.3.0"
   },
+  "comment:overrides": "Temporary: pin to classic Vite (rollup) so npm doesn't pull experimental rolldown-vite, which is incompatible with @tailwindcss/vite (error: 'Missing field tsconfigPaths'). Range allows 7.x updates. Remove once Astro/Tailwind/rolldown-vite stabilize together.",
   "overrides": {
-    "vite": "7.3.5",
-    "@tailwindcss/vite": "4.3.0",
-    "tailwindcss": "4.3.0"
+    "vite": "^7.3.5"
   }
 }
