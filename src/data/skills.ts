@@ -5,6 +5,6 @@ export const skills: SkillGroup[] = [
   { label: 'UI / Styling', items: ['Tailwind CSS', 'shadcn/ui', 'Material UI', 'Ant Design'] },
   { label: 'State', items: ['Zustand', 'Redux Toolkit', 'Context API'] },
   { label: 'Backend & Data', items: ['Hono', 'PostgreSQL', 'Drizzle', 'Prisma', 'JWT', 'Zod', 'REST'] },
-  { label: 'DevOps & Deploy', items: ['Docker', 'Jenkins CI/CD', 'PM2', 'VPS', 'Cloudflare Workers', 'Vercel', 'Netlify'] },
+  { label: 'DevOps & Deploy', items: ['Docker', 'GitHub Actions', 'Jenkins CI/CD', 'PM2', 'VPS', 'Cloudflare Workers', 'Vercel', 'Netlify'] },
   { label: 'Exploring', items: ['Python', 'LLM APIs', 'RAG', 'MCP'] },
 ];
