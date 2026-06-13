@@ -20,17 +20,17 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'order-lens', name: 'Order Lens Management', featured: true, status: 'Live', private: true,
-    outcome: 'A complete lens-ordering system for optical shops — track orders, customers, and vendors in one dashboard.',
-    problem: 'Optical shops juggle lens orders across spreadsheets and chat messages, making it hard to track who ordered what, from which vendor, and where each order stands.',
-    features: ['Create, edit, and track lens orders through their lifecycle', 'Customer and vendor records linked to every order', 'Dashboard overview with status at a glance', 'Reports and a recoverable deleted-orders view'],
-    domain: 'Optical', type: 'Management Systems', tech: ['React Router', 'TypeScript', 'shadcn/ui'],
+    outcome: 'A full-stack system for optical shops — order lifecycle, customer/vendor tracking, and lens prescriptions in one place.',
+    problem: 'Optical shops juggle lens orders, prescriptions, and vendor data across spreadsheets and chats, making status and history hard to track.',
+    features: ['Order lifecycle with lens prescription data (SPH / CYL / axis / PD) and real-time status', 'Customer and vendor tracking with soft-delete recovery', 'Analytics dashboard: revenue, profit margin, and order trends, filterable by date', 'JWT auth, role-based access, PDF invoices, and CI/CD to a self-hosted VPS'],
+    domain: 'Optical', type: 'Management Systems', tech: ['React Router v7', 'Hono', 'PostgreSQL', 'TypeScript', 'Docker'],
   },
   {
-    slug: 'mili', name: 'Personal Finance Tracker', featured: true, status: 'Live',
-    outcome: 'Take control of your money — track income, set budgets, and see where it all goes.',
-    problem: 'Most people lose track of their spending because logging transactions and seeing the bigger picture lives in separate, tedious tools.',
-    features: ['Income and expense tracking with filtering, search, and CSV export', 'Monthly budgets by category with visual progress', 'Reports: income vs. expense trends and category breakdowns', 'Secure email auth and full dark mode'],
-    domain: 'Finance', type: 'Apps', tech: ['React Router v7', 'Better Auth', 'TypeScript'],
+    slug: 'mili', name: 'Mili', featured: true, status: 'Live',
+    outcome: 'A personal finance platform — track accounts, transactions, and per-category budgets, end to end.',
+    problem: 'Most people lose track of their money because logging transactions and seeing the bigger picture lives in separate, tedious tools.',
+    features: ['Multi-account balance tracking with auto-updating transactions', 'Per-category monthly budgets with recurring support and real-time spend %', 'Mobile-first PWA with offline support and Recharts visualizations', 'Better Auth with multi-factor auth, plus CI/CD to a self-hosted VPS'],
+    domain: 'Finance', type: 'Apps', tech: ['React Router v7', 'Hono', 'Drizzle', 'Better Auth', 'TypeScript'],
     url: 'https://mili.endabelyu.com',
   },
   {
@@ -45,8 +45,8 @@ export const projects: Project[] = [
     slug: 'bunga-nona', name: 'Bunga Nona', featured: true, status: 'Live',
     outcome: 'A warm catalog site for a florist — browse blooms, explore custom arrangements, and order via WhatsApp.',
     problem: 'A florist needed an online presence that feels as warm as their shop, without the overhead of a full e-commerce checkout.',
-    features: ['Product catalog with category browsing and detail pages', 'Custom-arrangement showcase and featured products', 'Testimonials, FAQ, and location sections', 'One-tap ordering through WhatsApp'],
-    domain: 'Florist', type: 'Websites & Storefronts', tech: ['React Router', 'Radix UI', 'TypeScript'],
+    features: ['Product catalog with category browsing and detail pages', 'WhatsApp order CTA and an accessible FAQ accordion', 'Server-side rendered on Cloudflare Workers edge for fast global loads', 'Cross-device responsive across mobile, tablet, and desktop'],
+    domain: 'Florist', type: 'Websites & Storefronts', tech: ['React Router v7', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Cloudflare Workers'],
     url: 'https://bunganona.endabelyu.com',
   },
   {
