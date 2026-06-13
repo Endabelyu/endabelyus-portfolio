@@ -1,20 +1,69 @@
 ---
 import SectionHeading from '../components/SectionHeading.astro';
-const items = [
-  { year: '2025', role: 'Freelance Fullstack Developer', detail: 'Built business systems (optical POS, laundry, member management) for small businesses — frontend to deployment.' },
+
+const jobs = [
+  {
+    period: 'Feb 2024 — Present',
+    role: 'Frontend Developer',
+    company: 'PT. Bumi Amartha Teknologi Mandiri (AMARTEK)',
+    note: 'Client: SIMASJIWA — a top insurance company in Indonesia · Jakarta (remote)',
+    points: [
+      'Built a complete ticketing module with dynamic, interactive tables to streamline cross-department issue tracking.',
+      'Implemented schema-driven dynamic forms with validation, conditional fields, and API-based select options.',
+      'Optimized Zustand and Redux state flow and cut heavy renders for smoother, faster interactions.',
+    ],
+    achievements: ['+30% user efficiency after redesigning the pension system UI/UX', '−20% issue-resolution time via the new ticketing platform'],
+    tech: ['Next.js', 'TypeScript', 'Material UI', 'Ant Design', 'Zustand', 'Redux'],
+  },
+  {
+    period: 'Jan 2023 — Jan 2024',
+    role: 'Frontend Developer',
+    company: 'PT. Semesta Arus Teknologi',
+    note: 'IT solution company · South Jakarta',
+    points: [
+      'Digitized manual reporting workflows and built real-time analytics dashboards with ApexCharts.',
+      'Implemented role-based access control and integrated Google Maps for geolocation reporting.',
+      'Deployed and maintained on a VPS with Docker, PM2, and automated Jenkins CI/CD pipelines.',
+    ],
+    achievements: ['−50% report completion time through full digitization', '+35% deployment reliability after CI/CD + containerization'],
+    tech: ['SvelteKit', 'Google Maps API', 'ApexCharts', 'Jenkins', 'Docker'],
+  },
 ];
 ---
-<section id="experience" class="mx-auto max-w-content px-6 py-24">
-  <SectionHeading number="04" title="Experience" />
-  <ol class="space-y-8">
-    {items.map((it) => (
-      <li class="grid gap-2 sm:grid-cols-[100px_1fr]">
-        <span class="font-display text-ink-3">{it.year}</span>
-        <div>
-          <h3 class="text-xl">{it.role}</h3>
-          <p class="mt-1 text-ink-2">{it.detail}</p>
-        </div>
-      </li>
-    ))}
-  </ol>
+<section id="experience" class="relative mx-auto max-w-content overflow-x-clip px-6 py-24">
+  <p class="pointer-events-none absolute inset-x-0 top-10 select-none text-center font-display text-[14vw] leading-none text-surface" aria-hidden="true">EXPERIENCE</p>
+  <div class="relative">
+    <SectionHeading number="04" title="Experience" />
+    <p class="-mt-6 mb-10 text-lg text-ink-2">3 years building production web apps for enterprise clients — insurance, system integration, and reporting platforms.</p>
+    <ol class="space-y-12">
+      {jobs.map((j) => (
+        <li class="grid gap-3 sm:grid-cols-[150px_1fr]">
+          <div class="font-display text-ink-3">{j.period}</div>
+          <div>
+            <h3 class="text-xl">{j.role} <span class="text-ink-2">· {j.company}</span></h3>
+            <p class="mt-1 text-sm text-ink-3">{j.note}</p>
+            <ul class="mt-4 space-y-2">
+              {j.points.map((p) => (
+                <li class="flex gap-3 text-ink-2">
+                  <span class="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-ink-3" aria-hidden="true"></span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <ul class="mt-4 space-y-1.5">
+              {j.achievements.map((a) => (
+                <li class="flex gap-2 text-sm font-medium text-ink">
+                  <span class="text-accent" aria-hidden="true">↑</span>
+                  <span>{a}</span>
+                </li>
+              ))}
+            </ul>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {j.tech.map((t) => <li class="rounded-xs border border-border px-2 py-0.5 text-xs text-ink-3">{t}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
 </section>
