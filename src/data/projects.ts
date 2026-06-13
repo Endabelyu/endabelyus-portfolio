@@ -37,8 +37,8 @@ export const projects: Project[] = [
     slug: 'eisenhower-matrix', name: 'Eisenhower Matrix', featured: true, status: 'Live',
     outcome: 'Turn a messy to-do list into clear priorities, with a built-in Pomodoro timer and focus mode.',
     problem: 'A long flat to-do list hides what actually matters — everything looks equally urgent until the day is gone.',
-    features: ['Sort tasks into Do, Schedule, Delegate, and Hold', 'Daily Focus view with a time-budget summary', 'Built-in Pomodoro timer and progress stats', 'Export/import data and global keyboard shortcuts'],
-    domain: 'Productivity', type: 'Apps', tech: ['Vite', 'React', 'shadcn/ui'],
+    features: ['Sort tasks into Do, Schedule, Delegate, and Hold', 'Daily Focus view with a time-budget summary and Pomodoro timer', 'Cloud sync and auth via Supabase, plus a Spotify focus integration', 'Export/import data and global keyboard shortcuts'],
+    domain: 'Productivity', type: 'Apps', tech: ['React', 'Vite', 'Supabase', 'shadcn/ui', 'TypeScript'],
     url: 'https://eisenhower.endabelyu.com',
   },
   {
@@ -51,10 +51,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'iropin', name: 'iropin Member Management', featured: true, status: 'In rollout', private: true,
-    outcome: 'Helps an organization manage its members end to end — running on the edge for speed and scale.',
+    outcome: 'Helps an organization manage its members end to end — full-stack on the edge for speed and scale.',
     problem: 'An organization tracked its members through forms and spreadsheets, with no single source of truth for membership data.',
-    features: ['Member records and registration management', 'Runs on Cloudflare Workers for fast, global access', 'Structured API with documented endpoints', 'Currently rolling out to real members'],
-    domain: 'Membership', type: 'Management Systems', tech: ['React Router v7', 'Cloudflare Workers', 'TypeScript'],
+    features: ['Member records and registration management', 'Full-stack on Cloudflare Workers — React Router v7 frontend + a Hono API', 'Secure auth with Better Auth and a typed OpenAPI contract', 'Currently rolling out to real members'],
+    domain: 'Membership', type: 'Management Systems', tech: ['React Router v7', 'Hono', 'Cloudflare Workers', 'Better Auth', 'TypeScript'],
   },
   {
     slug: 'oms', name: 'OMS / OmniOptic', featured: false, status: 'Case study',
