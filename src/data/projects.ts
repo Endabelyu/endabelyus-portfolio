@@ -58,9 +58,9 @@ export const projects: Project[] = [
   },
   {
     slug: 'oms', name: 'OMS / OmniOptic', featured: false, status: 'Case study',
-    outcome: 'A commercial optical-shop management system — sales, multi-branch stock, prescriptions, and financial reports.',
-    problem: 'Optical retailers need an all-in-one system tailored to their workflow: medical prescriptions, tiered transactions, and multi-branch inventory — sold as a real product with packaged tiers.',
-    features: ['POS with OD/OS medical prescription records', 'Centralized, real-time multi-branch inventory', 'Automated profit-and-loss reporting', 'Role-based access (cashier, supervisor, admin) and WhatsApp automation'],
+    outcome: 'A reusable optical-shop management system — the platform I built Optik Zafir on for a real client.',
+    problem: 'Optical retailers need an all-in-one system tailored to their workflow: medical prescriptions, tiered transactions, and multi-branch inventory. OMS is the reusable base behind a real client deployment (Optik Zafir).',
+    features: ['POS with OD/OS medical prescription records', 'Centralized, real-time multi-branch inventory', 'Automated profit-and-loss reporting', 'Role-based access for cashier, supervisor, and admin'],
     domain: 'Optical', type: 'Management Systems', tech: ['React', 'Hono', 'PostgreSQL', 'Drizzle'],
   },
   {
