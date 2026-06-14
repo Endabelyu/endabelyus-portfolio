@@ -1,5 +1,7 @@
 ---
 import SectionHeading from '../components/SectionHeading.astro';
+import { Image } from 'astro:assets';
+import naswaPhoto from '../assets/naswa.jpg';
 ---
 <section id="about" class="relative mx-auto max-w-content overflow-x-clip px-6 py-24">
   <p class="pointer-events-none absolute inset-x-0 top-10 select-none text-center font-display text-[14vw] leading-none text-surface" aria-hidden="true">ABOUT</p>
@@ -11,7 +13,7 @@ import SectionHeading from '../components/SectionHeading.astro';
       <p>Beyond the frontend, I build full products end to end — backend, databases, and deployment — across my own projects, from optical-shop systems to finance apps. Lately I've been exploring AI engineering (LLMs, RAG, automation) to see how these tools can make products more useful.</p>
     </div>
     <div class="order-first aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-md border border-border bg-surface sm:order-none">
-      <img src="/naswa.jpg" alt="Naswa Wilantama, fullstack developer" width="280" height="350" loading="lazy" class="h-full w-full object-cover" />
+      <Image src={naswaPhoto} alt="Naswa Wilantama, fullstack developer" width={560} height={700} loading="lazy" class="h-full w-full object-cover" />
     </div>
   </div>
   </div>
