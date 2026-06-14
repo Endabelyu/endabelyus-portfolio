@@ -99,13 +99,6 @@ export const projects: Project[] = [
     features: ['Bridges WhatsApp messages and Google Sheets', 'Typed, validated endpoints (Zod + OpenAPI)', 'Webhook-driven automation', 'Interactive API reference via Scalar'],
     domain: 'Integration', type: 'APIs & Automation', tech: ['Hono', 'Zod OpenAPI', 'Google API'],
   },
-  {
-    slug: 'wabot', name: 'WABot', featured: false, status: 'Live',
-    outcome: 'A WhatsApp bot wired to Google Sheets for lightweight automation.',
-    problem: 'Small teams want simple WhatsApp automations without standing up heavy infrastructure.',
-    features: ['Responds to WhatsApp messages automatically', 'Reads and writes Google Sheets', 'Lightweight Hono + OpenAPI service'],
-    domain: 'Integration', type: 'APIs & Automation', tech: ['Hono', 'OpenAPI'],
-  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
