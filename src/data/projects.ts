@@ -93,13 +93,6 @@ export const projects: Project[] = [
     domain: 'Laundry', type: 'Websites & Storefronts', tech: ['Remix', 'Tailwind', 'i18next'],
   },
   {
-    slug: 'optik-talenta', name: 'Optik Talenta', featured: false, status: 'In development',
-    outcome: 'An optical-shop system split into a dedicated backend and frontend.',
-    problem: 'A growing optical shop needed its own management system with a clean separation between API and interface.',
-    features: ['Separated backend and frontend codebases', 'Tailored to the shop’s daily operations', 'Built on a modern TypeScript stack'],
-    domain: 'Optical', type: 'Management Systems', tech: ['React', 'Hono', 'TypeScript'],
-  },
-  {
     slug: 'wa-gsheet-api', name: 'WA GSheet API', featured: false, status: 'Live',
     outcome: 'An API that connects WhatsApp with Google Sheets — automate data flows without manual copy-paste.',
     problem: 'Teams capture data over WhatsApp but then re-type it into spreadsheets by hand, which is slow and error-prone.',
