@@ -3,7 +3,7 @@ import type { Project } from '../data/projects';
 interface Props { project: Project; }
 const { project: p } = Astro.props;
 ---
-<article data-type={p.type} class="group relative flex flex-col rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1 hover:border-border-strong">
+<article data-type={p.type} class="group flex flex-col rounded-md border border-border bg-bg p-6 transition-transform hover:-translate-y-1 hover:border-border-strong">
   <div class="flex items-center justify-between">
     <span class="text-xs uppercase tracking-wide text-ink-3">{p.domain}</span>
     <span class="rounded-xs bg-accent-soft px-2 py-1 text-xs text-accent-pressed">{p.status}</span>
@@ -17,12 +17,10 @@ const { project: p } = Astro.props;
     {p.tech.map((t) => <li class="rounded-xs border border-border px-2 py-0.5 text-xs text-ink-2">{t}</li>)}
   </ul>
 
-  <div class="mt-5 flex items-center gap-4 text-sm font-medium">
-    <!-- Stretched link: whole card -> detail page -->
-    <a href={`/projects/${p.slug}`} class="absolute inset-0 z-0" aria-label={`View ${p.name} details`}></a>
-    <span class="text-accent group-hover:text-accent-hover">View details →</span>
+  <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm font-medium">
+    <a href={`/projects/${p.slug}`} aria-label={`View ${p.name} details`} class="inline-flex items-center py-2 text-accent hover:text-accent-hover">View details →</a>
     {p.url && (
-      <a href={p.url} target="_blank" rel="noopener" class="relative z-10 text-ink-2 underline-offset-4 hover:text-accent hover:underline">View live ↗</a>
+      <a href={p.url} target="_blank" rel="noopener" aria-label={`Open ${p.name} live site`} class="inline-flex items-center py-2 text-ink-2 underline-offset-4 hover:text-accent hover:underline">View live ↗</a>
     )}
   </div>
 </article>
