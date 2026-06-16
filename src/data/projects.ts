@@ -15,6 +15,7 @@ export interface Project {
   repo?: string;
   featured: boolean;
   private?: boolean;      // internal/client tool, no public demo
+  screenshot?: boolean;   // set true once /projects/<slug>.png exists
 }
 
 export const projects: Project[] = [
@@ -66,14 +67,14 @@ export const projects: Project[] = [
   {
     slug: 'online-optic-store', name: 'Online Optic Store', featured: false, status: 'In development',
     outcome: 'A customer-facing online store for an optical shop — cart, checkout, and an admin back office.',
-    problem: 'An optical brand wanted to sell online while keeping operations in-house, built to enterprise security standards.',
-    features: ['Storefront with cart and a guided order wizard', 'Admin back office for orders and payment methods', 'Monorepo: separate API, web, and shared types', 'Documented to SOC 2 / ISO 27001 readiness'],
+    problem: 'An optical brand wanted to sell online while keeping operations in-house, with solid security and reliability practices.',
+    features: ['Storefront with cart and a guided order wizard', 'Admin back office for orders and payment methods', 'Monorepo: separate API, web, and shared types', 'Documented access-control, disaster-recovery, and data-handling practices'],
     domain: 'Optical', type: 'Websites & Storefronts', tech: ['Hono', 'React', 'PostgreSQL', 'Drizzle', 'TypeScript', 'Docker'],
     url: 'https://online-optic-web.endabelyu.com',
   },
   {
     slug: 'vinara', name: 'Vinara', featured: false, status: 'In development',
-    outcome: 'An enterprise optical POS — patient records, multi-branch inventory, and tiered payments.',
+    outcome: 'A full-featured optical POS — patient records, multi-branch inventory, and tiered payments.',
     problem: 'Optical clinics need to move a customer from walk-in to fully-paid glasses while tracking prescriptions, lab status, and partial payments.',
     features: ['Patient management with linked prescription history', 'POS lifecycle state machine (draft → in-lab → dispensed)', 'Multi-branch inventory with stock transfers', 'Fractional down-payments and BPJS integration with audit trails'],
     domain: 'Optical', type: 'Management Systems', tech: ['React', 'Hono', 'PostgreSQL', 'Prisma', 'Better Auth'],

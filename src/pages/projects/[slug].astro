@@ -28,14 +28,15 @@ const title = `${p.name} — Naswa Wilantama`;
       <div class="mt-6 flex flex-wrap gap-3">
         {p.url && <a href={p.url} class="rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-hover">View live →</a>}
         {p.repo && <a href={p.repo} class="rounded-sm border border-border-strong px-5 py-2.5 text-sm font-medium hover:border-accent hover:text-accent">View code</a>}
-        {p.private && <span class="rounded-sm border border-border px-5 py-2.5 text-sm text-ink-3">Private — screenshots below</span>}
+        {p.private && <span class="rounded-sm border border-border px-5 py-2.5 text-sm text-ink-3">Private — internal project</span>}
       </div>
     </header>
 
-    <!-- Screenshot placeholder — swap real images into public/projects/<slug>.png -->
-    <div class="mt-12 aspect-video w-full overflow-hidden rounded-md border border-border bg-surface">
-      <img src={`/projects/${p.slug}.png`} alt={`${p.name} screenshot`} loading="lazy" class="h-full w-full object-cover" onerror="this.parentElement.classList.add('flex','items-center','justify-center');this.style.display='none';this.insertAdjacentHTML('afterend','<span class=\'text-sm text-ink-3\'>Screenshot coming soon</span>')" />
-    </div>
+    {p.screenshot && (
+      <div class="mt-12 aspect-video w-full overflow-hidden rounded-md border border-border bg-surface">
+        <img src={`/projects/${p.slug}.png`} alt={`${p.name} screenshot`} loading="lazy" class="h-full w-full object-cover" />
+      </div>
+    )}
 
     <section class="mt-12">
       <h2 class="text-xl">The problem</h2>
