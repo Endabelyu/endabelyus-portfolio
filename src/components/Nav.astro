@@ -15,8 +15,8 @@ const links = [
 
     <div class="flex items-center gap-6">
       <!-- Desktop links -->
-      <ul class="hidden gap-6 text-sm text-ink-2 sm:flex">
-        {links.map((l) => <li><a href={l.href} class="hover:text-accent">{l.label}</a></li>)}
+      <ul class="hidden items-center gap-6 text-sm text-ink-2 sm:flex">
+        {links.map((l) => <li><a href={l.href} class="inline-flex items-center py-2 hover:text-accent">{l.label}</a></li>)}
       </ul>
 
       <!-- CV button (desktop) -->
