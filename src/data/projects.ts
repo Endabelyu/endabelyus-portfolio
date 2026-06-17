@@ -12,7 +12,8 @@ export interface Project {
   tech: string[];
   status: ProjectStatus;
   url?: string;           // live demo
-  repo?: string;
+  repo?: string;          // source repo (frontend/main)
+  repoApi?: string;       // backend/API repo (fullstack proof)
   featured: boolean;
   private?: boolean;      // internal/client tool, no public demo
   screenshot?: boolean;   // set true once /projects/<slug>.png exists
@@ -33,6 +34,8 @@ export const projects: Project[] = [
     features: ['Multi-account balance tracking with auto-updating transactions', 'Per-category monthly budgets with recurring support and real-time spend %', 'Mobile-first PWA with offline support and Recharts visualizations', 'Better Auth with multi-factor auth, plus CI/CD to a self-hosted VPS'],
     domain: 'Finance', type: 'Apps', tech: ['React Router v7', 'Hono', 'Drizzle', 'Better Auth', 'TypeScript'],
     url: 'https://mili.endabelyu.com',
+    repo: 'https://github.com/Endabelyu/mili',
+    repoApi: 'https://github.com/Endabelyu/api-mili',
   },
   {
     slug: 'eisenhower-matrix', name: 'Eisenhower Matrix', featured: true, status: 'Live',
@@ -41,6 +44,7 @@ export const projects: Project[] = [
     features: ['Sort tasks into Do, Schedule, Delegate, and Hold', 'Daily Focus view with a time-budget summary and Pomodoro timer', 'Cloud sync and auth via Supabase, plus a Spotify focus integration', 'Export/import data and global keyboard shortcuts'],
     domain: 'Productivity', type: 'Apps', tech: ['React', 'Vite', 'Supabase', 'shadcn/ui', 'TypeScript'],
     url: 'https://eisenhower.endabelyu.com',
+    repo: 'https://github.com/Endabelyu/eisenhower-task-management',
   },
   {
     slug: 'bunga-nona', name: 'Bunga Nona', featured: true, status: 'Live',
