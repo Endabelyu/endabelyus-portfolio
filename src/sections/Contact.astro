@@ -10,7 +10,11 @@ const channels = [
   <p class="pointer-events-none absolute inset-x-0 top-10 select-none text-center font-display text-[14vw] leading-none text-surface" aria-hidden="true">CONTACT</p>
   <div class="relative">
   <SectionHeading number="05" title="Let's connect" />
-  <p class="-mt-6 mb-8 max-w-md text-lg text-ink-2">Got a project in mind or just want to chat? I'd love to hear from you.</p>
+  <p class="-mt-6 mb-3 inline-flex items-center gap-2 text-sm font-medium text-success">
+    <span class="inline-block h-2 w-2 rounded-full bg-success" aria-hidden="true"></span>
+    Available for freelance projects &amp; the right full-time role — remote, worldwide
+  </p>
+  <p class="mb-8 max-w-md text-lg text-ink-2">Got a project in mind or just want to chat? I'd love to hear from you.</p>
   <ul class="grid gap-3 sm:max-w-md">
     {channels.map((c) => (
       <li>
