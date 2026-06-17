@@ -13,6 +13,7 @@ const { project: p } = Astro.props;
     {p.name}
   </h3>
   <p class="mt-2 text-ink-2">{p.outcome}</p>
+  {p.result && <p class="mt-2 text-sm font-medium text-accent-pressed"><span aria-hidden="true">↑</span> {p.result}</p>}
   <ul class="mt-4 flex flex-wrap gap-2">
     {p.tech.map((t) => <li class="rounded-xs border border-border px-2 py-0.5 text-xs text-ink-2">{t}</li>)}
   </ul>

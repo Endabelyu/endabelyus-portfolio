@@ -5,6 +5,7 @@ export interface Project {
   slug: string;
   name: string;
   outcome: string;        // one-line problem -> result (cards)
+  result?: string;        // one concrete impact metric (e.g. "50+ active users", "live across 3 branches")
   problem: string;        // the context / why it exists
   features: string[];     // what it does (detail page)
   domain: string;         // industry label
