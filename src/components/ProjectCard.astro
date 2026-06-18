@@ -19,9 +19,9 @@ const { project: p } = Astro.props;
   </ul>
 
   <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm font-medium">
-    <a href={`/projects/${p.slug}`} aria-label={`View ${p.name} details`} class="inline-flex items-center py-2 text-accent hover:text-accent-hover">View details →</a>
+    <a href={`/projects/${p.slug}`} aria-label={`View details: ${p.name}`} class="inline-flex items-center py-2 text-accent hover:text-accent-hover">View details →</a>
     {p.url && (
-      <a href={p.url} target="_blank" rel="noopener" aria-label={`Open ${p.name} live site`} class="inline-flex items-center py-2 text-ink-2 underline-offset-4 hover:text-accent hover:underline">View live ↗</a>
+      <a href={p.url} target="_blank" rel="noopener" aria-label={`View live: ${p.name}`} class="inline-flex items-center py-2 text-ink-2 underline-offset-4 hover:text-accent hover:underline">View live ↗</a>
     )}
   </div>
 </article>
