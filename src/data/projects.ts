@@ -37,6 +37,7 @@ export const projects: Project[] = [
     url: 'https://mili.endabelyu.com',
     repo: 'https://github.com/Endabelyu/mili',
     repoApi: 'https://github.com/Endabelyu/api-mili',
+    screenshots: ['mili-1.webp', 'mili-2.webp', 'mili-3.webp'],
   },
   {
     slug: 'eisenhower-matrix', name: 'Eisenhower Matrix', featured: true, status: 'Live',
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     domain: 'Productivity', type: 'Apps', tech: ['React', 'Vite', 'Supabase', 'shadcn/ui', 'TypeScript'],
     url: 'https://eisenhower.endabelyu.com',
     repo: 'https://github.com/Endabelyu/eisenhower-task-management',
+    screenshots: ['eisenhower-1.webp', 'eisenhower-2.webp', 'eisenhower-3.webp'],
   },
   {
     slug: 'bunga-nona', name: 'Bunga Nona', featured: true, status: 'Live',
@@ -75,7 +77,7 @@ export const projects: Project[] = [
     problem: 'An optical brand wanted to sell online while keeping operations in-house, with solid security and reliability practices.',
     features: ['Storefront with cart and a guided order wizard', 'Admin back office for orders and payment methods', 'Monorepo: separate API, web, and shared types', 'Documented access-control, disaster-recovery, and data-handling practices'],
     domain: 'Optical', type: 'Websites & Storefronts', tech: ['Hono', 'React', 'PostgreSQL', 'Drizzle', 'TypeScript', 'Docker'],
-    url: 'https://online-optic-web.endabelyu.com', screenshots: ['online-optic-store-1.webp'],
+    url: 'https://online-optic-web.endabelyu.com', screenshots: ['online-optic-store-1.webp', 'online-optic-store-2.webp', 'online-optic-store-3.webp'],
   },
   {
     slug: 'vinara', name: 'Vinara', featured: false, status: 'In development',
@@ -97,6 +99,7 @@ export const projects: Project[] = [
     problem: 'An express laundry brand needed a professional online front door that works for both Indonesian and English-speaking customers.',
     features: ['Bilingual content (English / Indonesian) via i18next', 'Service categories and transparent pricing tiers', 'Promotions, loyalty, and an interactive FAQ', 'SEO-optimized and deployed on Netlify'],
     domain: 'Laundry', type: 'Websites & Storefronts', tech: ['Remix', 'Tailwind', 'i18next'],
+    url: 'https://laundry-mycuci.endabelyu.com', screenshots: ['mycuci-1.webp', 'mycuci-2.webp'],
   },
   {
     slug: 'wa-gsheet-api', name: 'WA GSheet API', featured: false, status: 'Live',
