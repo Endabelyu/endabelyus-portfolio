@@ -17,7 +17,7 @@ export interface Project {
   repoApi?: string;       // backend/API repo (fullstack proof)
   featured: boolean;
   private?: boolean;      // internal/client tool, no public demo
-  screenshot?: boolean;   // set true once /projects/<slug>.png exists
+  screenshots?: string[]; // filenames in /public/projects/ (gallery on detail page)
 }
 
 export const projects: Project[] = [
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     problem: 'A florist needed an online presence that feels as warm as their shop, without the overhead of a full e-commerce checkout.',
     features: ['Product catalog with category browsing and detail pages', 'WhatsApp order CTA and an accessible FAQ accordion', 'Server-side rendered on Cloudflare Workers edge for fast global loads', 'Cross-device responsive across mobile, tablet, and desktop'],
     domain: 'Florist', type: 'Websites & Storefronts', tech: ['React Router v7', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Cloudflare Workers'],
-    url: 'https://bunganona.endabelyu.com', screenshot: true,
+    url: 'https://bunganona.endabelyu.com', screenshots: ['bunga-nona-1.webp', 'bunga-nona-2.webp', 'bunga-nona-3.webp'],
   },
   {
     slug: 'iropin', name: 'iropin Member Management', featured: true, status: 'In rollout', private: true,
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     problem: 'An optical brand wanted to sell online while keeping operations in-house, with solid security and reliability practices.',
     features: ['Storefront with cart and a guided order wizard', 'Admin back office for orders and payment methods', 'Monorepo: separate API, web, and shared types', 'Documented access-control, disaster-recovery, and data-handling practices'],
     domain: 'Optical', type: 'Websites & Storefronts', tech: ['Hono', 'React', 'PostgreSQL', 'Drizzle', 'TypeScript', 'Docker'],
-    url: 'https://online-optic-web.endabelyu.com', screenshot: true,
+    url: 'https://online-optic-web.endabelyu.com', screenshots: ['online-optic-store-1.webp'],
   },
   {
     slug: 'vinara', name: 'Vinara', featured: false, status: 'In development',

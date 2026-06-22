@@ -39,9 +39,11 @@ const title = `${p.name} — Naswa Wilantama`;
       </div>
     </header>
 
-    {p.screenshot && (
-      <div class="mt-12 aspect-video w-full overflow-hidden rounded-md border border-border bg-surface">
-        <img src={`/projects/${p.slug}.png`} alt={`${p.name} screenshot`} loading="lazy" class="h-full w-full object-cover" />
+    {p.screenshots && p.screenshots.length > 0 && (
+      <div class="mt-12 space-y-4">
+        {p.screenshots.map((src, i) => (
+          <img src={`/projects/${src}`} alt={`${p.name} screenshot ${i + 1}`} width="1440" height="900" loading="lazy" class="w-full rounded-md border border-border bg-surface" />
+        ))}
       </div>
     )}
 
