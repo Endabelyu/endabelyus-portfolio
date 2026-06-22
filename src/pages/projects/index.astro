@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Nav from '../../components/Nav.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { projects, projectTypes } from '../../data/projects';
 
@@ -8,14 +7,13 @@ const statusOrder = { 'Live': 0, 'In rollout': 1, 'Case study': 2, 'In developme
 const sortedProjects = [...projects].sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
 ---
 <Base title="Projects — Naswa Wilantama" description="All projects by Naswa Wilantama — management systems, storefronts, apps, and automation.">
-  <Nav />
   <main class="mx-auto max-w-content px-6 py-16">
     <a href="/#projects" class="inline-flex items-center gap-1 text-sm text-ink-2 hover:text-accent">← Back home</a>
 
     <header class="mt-8">
       <span class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-3">All projects</span>
       <h1 class="mt-2 text-4xl tracking-tight sm:text-5xl">Everything I've built</h1>
-      <p class="mt-4 max-w-xl text-lg text-ink-2">From business systems to storefronts, apps, and automation — filter by what you're looking for.</p>
+      <p class="mt-4 max-w-xl text-lg text-ink-2">From business systems to storefronts, apps, and automation. Filter by what you are looking for.</p>
     </header>
 
     <div class="mt-10 mb-8 flex flex-wrap gap-2" data-filter-bar>
